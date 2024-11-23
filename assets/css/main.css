@@ -543,81 +543,118 @@ section,
 /*--------------------------------------------------------------
 # Hero Section
 --------------------------------------------------------------*/
+/* Hero Section Base Styles */
+/* الأساسيات العامة */
+/* الأساسيات العامة */
 .hero {
   width: 100%;
-  min-height: 100vh;
+  height: 100vh; /* يأخذ ارتفاع الشاشة بالكامل */
   position: relative;
-  padding: 80px 0;
   display: flex;
   align-items: center;
   justify-content: center;
+  overflow: hidden;
 }
 
 .hero img {
   position: absolute;
-  inset: 0;
-  display: block;
+  inset: 0; /* يملأ كامل الحاوية */
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: cover; /* تجعل الصورة تغطي المساحة بالكامل دون تشويه */
+  object-position: center center; /* تأكد من أن الصورة في المنتصف */
   z-index: 1;
 }
 
 .hero:before {
   content: "";
-  background: color-mix(in srgb, var(--background-color), transparent 70%);
   position: absolute;
   inset: 0;
+  background: rgba(0, 0, 0, 0.5); /* طبقة شفافة لتحسين وضوح النص */
   z-index: 2;
 }
 
 .hero .container {
   position: relative;
-  z-index: 3;
+  z-index: 3; /* أعلى من الصورة والطبقة */
+  text-align: center;
+  color: white;
 }
 
 .hero h2 {
-  margin: 0;
   font-size: 64px;
   font-weight: 700;
+  margin: 0;
 }
 
 .hero p {
-  margin: 5px 0 0 0;
   font-size: 26px;
+  margin: 10px 0 0;
 }
 
 .hero p span {
-  letter-spacing: 1px;
-  border-bottom: 2px solid var(--accent-color);
+  color: #ffd700; /* لون مميز للنص */
+  font-weight: bold;
+  border-bottom: 2px solid #ffd700;
 }
 
-.hero .social-links {
-  margin-top: 25px;
-}
-
-.hero .social-links a {
-  font-size: 24px;
-  display: inline-block;
-  color: color-mix(in srgb, var(--default-color), transparent 50%);
-  line-height: 1;
-  margin-right: 20px;
-  transition: 0.3s;
-}
-
-.hero .social-links a:hover {
-  color: var(--accent-color);
-}
-
-@media (max-width: 768px) {
+/* التصميم للشاشات الكبيرة */
+@media (min-width: 1200px) {
   .hero h2 {
-    font-size: 32px;
+    font-size: 72px;
   }
 
   .hero p {
-    font-size: 20px;
+    font-size: 32px;
   }
 }
+
+/* التصميم للأجهزة اللوحية */
+@media (max-width: 1024px) {
+  .hero {
+    height: 80vh; /* تقليل الارتفاع قليلاً للأجهزة اللوحية */
+  }
+
+  .hero h2 {
+    font-size: 48px;
+  }
+
+  .hero p {
+    font-size: 24px;
+  }
+}
+
+/* التصميم للهواتف */
+@media (max-width: 768px) {
+  .hero {
+    height: 70vh; /* ارتفاع أصغر للهواتف */
+  }
+
+  .hero h2 {
+    font-size: 36px;
+  }
+
+  .hero p {
+    font-size: 18px;
+  }
+}
+
+/* التصميم للهواتف الصغيرة جدًا */
+@media (max-width: 480px) {
+  .hero {
+    height: 60vh; /* تقليل الارتفاع للهواتف الصغيرة */
+  }
+
+  .hero h2 {
+    font-size: 28px;
+  }
+
+  .hero p {
+    font-size: 16px;
+  }
+}
+
+
 
 /*--------------------------------------------------------------
 # About Section
