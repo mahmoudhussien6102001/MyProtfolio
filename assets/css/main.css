@@ -543,62 +543,68 @@ section,
 /*--------------------------------------------------------------
 # Hero Section
 --------------------------------------------------------------*/
-/* Hero Section Base Styles */
-/* الأساسيات العامة */
 /* الأساسيات العامة */
 .hero {
+  position: relative;
   width: 100%;
   height: 100vh; /* يأخذ ارتفاع الشاشة بالكامل */
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
   overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.hero img {
+/* صورة الخلفية */
+.hero-img {
   position: absolute;
-  inset: 0; /* يملأ كامل الحاوية */
-  width: 100%;
-  height: 100%;
-  object-fit: cover; /* تجعل الصورة تغطي المساحة بالكامل دون تشويه */
+  inset: 0;
+  max-width: 100%; /* تأكد من أن العرض لا يتجاوز الحاوية */
+  max-height: 100%; /* تأكد من أن الارتفاع لا يتجاوز الحاوية */
+  width: auto; /* يسمح للصورة أن تحتفظ بنسبة العرض إلى الارتفاع */
+  height: auto; /* نفس الشيء للارتفاع */
+  object-fit: cover; /* تجعل الصورة تغطي المساحة بالكامل */
   object-position: center center; /* تأكد من أن الصورة في المنتصف */
   z-index: 1;
 }
 
+/* طبقة فوق الصورة لتظليل النص */
 .hero:before {
   content: "";
   position: absolute;
   inset: 0;
-  background: rgba(0, 0, 0, 0.5); /* طبقة شفافة لتحسين وضوح النص */
+  background: rgba(0, 0, 0, 0.5); /* إضافة طبقة شفافة لتحسين وضوح النص */
   z-index: 2;
 }
 
+/* المحتوى داخل hero */
 .hero .container {
   position: relative;
-  z-index: 3; /* أعلى من الصورة والطبقة */
+  z-index: 3;
   text-align: center;
   color: white;
 }
 
+/* عنوان النص */
 .hero h2 {
   font-size: 64px;
   font-weight: 700;
   margin: 0;
 }
 
+/* النص الذي يلي العنوان */
 .hero p {
   font-size: 26px;
   margin: 10px 0 0;
 }
 
+/* النص مع تأثير Typed */
 .hero p span {
-  color: #ffd700; /* لون مميز للنص */
+  color: #ffd700;
   font-weight: bold;
   border-bottom: 2px solid #ffd700;
 }
 
-/* التصميم للشاشات الكبيرة */
+/* تصميم الشاشات الكبيرة */
 @media (min-width: 1200px) {
   .hero h2 {
     font-size: 72px;
@@ -609,7 +615,7 @@ section,
   }
 }
 
-/* التصميم للأجهزة اللوحية */
+/* تصميم للأجهزة اللوحية */
 @media (max-width: 1024px) {
   .hero {
     height: 80vh; /* تقليل الارتفاع قليلاً للأجهزة اللوحية */
@@ -624,10 +630,10 @@ section,
   }
 }
 
-/* التصميم للهواتف */
+/* تصميم للهواتف */
 @media (max-width: 768px) {
   .hero {
-    height: 70vh; /* ارتفاع أصغر للهواتف */
+    height: 70vh; /* تقليل الارتفاع للهواتف */
   }
 
   .hero h2 {
@@ -639,7 +645,7 @@ section,
   }
 }
 
-/* التصميم للهواتف الصغيرة جدًا */
+/* تصميم للهواتف الصغيرة جدًا */
 @media (max-width: 480px) {
   .hero {
     height: 60vh; /* تقليل الارتفاع للهواتف الصغيرة */
