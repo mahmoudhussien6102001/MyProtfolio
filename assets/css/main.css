@@ -182,11 +182,14 @@ h6 {
   color: var(--heading-color);
 }
 
-.header .social-links {
+.head .social-links {
   margin: 0 0 20px 0;
+  display: flex; /* لتحديد جميع العناصر في صف واحد */
+  justify-content: center; /* لتوسيط الروابط أفقياً */
+  gap: 5px; /* إضافة مسافة بين الروابط */
 }
 
-.header .social-links a {
+.head .social-links a {
   font-size: 16px;
   display: inline-flex;
   align-items: center;
@@ -201,7 +204,7 @@ h6 {
   transition: 0.3s;
 }
 
-.header .social-links a:hover {
+.head .social-links a:hover {
   color: var(--contrast-color);
   background: var(--accent-color);
 }
