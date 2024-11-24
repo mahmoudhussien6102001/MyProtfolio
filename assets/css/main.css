@@ -182,21 +182,20 @@ h6 {
   color: var(--heading-color);
 }
 
-.head .social-links {
+.header .social-links {
   margin: 0 0 20px 0;
-  display: flex; /* لتحديد جميع العناصر في صف واحد */
-  justify-content: center; /* لتوسيط الروابط أفقياً */
-  gap: 5px; /* إضافة مسافة بين الروابط */
+  display: flex; /* Arrange items in a row */
+  justify-content: center; /* Center items horizontally */
+  gap: 5px; /* Add spacing between icons */
 }
 
-.head .social-links a {
+.social-links a {
   font-size: 16px;
   display: inline-flex;
   align-items: center;
   justify-content: center;
   background: color-mix(in srgb, var(--default-color), transparent 90%);
   color: var(--default-color);
-  margin: 0 2px;
   border-radius: 50%;
   text-align: center;
   width: 40px;
@@ -204,10 +203,11 @@ h6 {
   transition: 0.3s;
 }
 
-.head .social-links a:hover {
+.social-links a:hover {
   color: var(--contrast-color);
   background: var(--accent-color);
 }
+
 
 @media (min-width: 1200px) {
 
