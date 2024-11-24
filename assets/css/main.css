@@ -222,7 +222,18 @@ h6 {
     left: -100%;
   }
 }
+@media (min-width: 1200px) {
+  .social-links {
+    justify-content: flex-start; /* للمحاذاة إلى اليسار على الشاشات الكبيرة */
+  }
+}
 
+@media (max-width: 1199px) {
+  .social-links {
+    justify-content: center; /* للمحاذاة إلى المنتصف على الشاشات الصغيرة */
+    gap: 15px; /* زيادة المسافة بين الأيقونات للشاشات الصغيرة */
+  }
+}
 .header.header-show {
   left: 0;
 }
